@@ -17,7 +17,7 @@ class VoiceChatManager {
         // For production: 'https://your-app.railway.app' or your deployed URL
         this.serverUrl = window.location.hostname === 'localhost' 
             ? 'http://localhost:3000' 
-            : 'https://discord-clone-server-production.up.railway.app'; // Will update after deployment
+            : 'https://discord-clone-server-production-eb78.up.railway.app';
         
         // Connect to signaling server
         this.connectSocket();
