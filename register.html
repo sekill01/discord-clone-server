@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Clone - Register</title>
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <div class="auth-background">
+        <div class="auth-container">
+            <div class="auth-box register-box">
+                <div class="auth-content full-width">
+                    <h2 class="auth-title">Create an account</h2>
+                    
+                    <form class="auth-form" id="registerForm">
+                        <div class="form-group">
+                            <label for="email">EMAIL <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="username">USERNAME <span class="required">*</span></label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">PASSWORD <span class="required">*</span></label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dob">DATE OF BIRTH <span class="required">*</span></label>
+                            <div class="dob-fields">
+                                <select id="dobMonth" name="dobMonth" required>
+                                    <option value="" disabled selected>Month</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                                <select id="dobDay" name="dobDay" required>
+                                    <option value="" disabled selected>Day</option>
+                                    <!-- Days will be populated by JS -->
+                                </select>
+                                <select id="dobYear" name="dobYear" required>
+                                    <option value="" disabled selected>Year</option>
+                                    <!-- Years will be populated by JS -->
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">(Optional) It's okay to send me emails with Discord updates, tips, and special offers. You can opt out at any time.</label>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn">Continue</button>
+                        
+                        <p class="auth-footer">
+                            <a href="login.html">Already have an account?</a>
+                        </p>
+                        
+                        <p class="terms-text">
+                            By registering, you agree to Discord Clone's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

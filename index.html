@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Clone</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Server List Sidebar -->
+        <div class="server-sidebar">
+            <div class="server-list">
+                <!-- Home/DM Button -->
+                <div class="server-item home-server" data-server="home">
+                    <div class="server-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <div class="server-tooltip">Home</div>
+                </div>
+                
+                <div class="server-separator"></div>
+                
+                <!-- Servers -->
+                <div class="server-item" data-server="gaming">
+                    <div class="server-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">G</div>
+                    <div class="server-tooltip">Gaming Hub</div>
+                </div>
+                
+                <div class="server-item" data-server="coding">
+                    <div class="server-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">C</div>
+                    <div class="server-tooltip">Coding Community</div>
+                </div>
+                
+                <div class="server-item" data-server="music">
+                    <div class="server-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">M</div>
+                    <div class="server-tooltip">Music Lovers</div>
+                </div>
+                
+                <div class="server-item" data-server="design">
+                    <div class="server-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">D</div>
+                    <div class="server-tooltip">Design Studio</div>
+                </div>
+                
+                <div class="server-separator"></div>
+                
+                <!-- Add Server Button -->
+                <div class="server-item add-server">
+                    <div class="server-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </div>
+                    <div class="server-tooltip">Add a Server</div>
+                </div>
+                
+                <!-- Explore Button -->
+                <div class="server-item explore-servers">
+                    <div class="server-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <div class="server-tooltip">Explore Public Servers</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Channel Sidebar -->
+        <div class="channel-sidebar">
+            <div class="server-header">
+                <h3 class="server-name">Gaming Hub</h3>
+                <svg class="dropdown-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 10l5 5 5-5z"/>
+                </svg>
+            </div>
+            
+            <div class="channels-container">
+                <!-- Category 1 -->
+                <div class="channel-category">
+                    <div class="category-header">
+                        <svg class="category-arrow" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                        <span class="category-name">TEXT CHANNELS</span>
+                    </div>
+                    <div class="channel-list">
+                        <div class="channel-item active" data-channel="general">
+                            <svg class="channel-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                            <span class="channel-name">general</span>
+                        </div>
+                        <div class="channel-item" data-channel="random">
+                            <svg class="channel-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                            <span class="channel-name">random</span>
+                        </div>
+                        <div class="channel-item" data-channel="memes">
+                            <svg class="channel-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                            <span class="channel-name">memes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="channel-category">
+                    <div class="category-header">
+                        <svg class="category-arrow" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                        <span class="category-name">VOICE CHANNELS</span>
+                    </div>
+                    <div class="channel-list">
+                        <div class="channel-item voice-channel" data-channel="voice-general">
+                            <svg class="channel-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                            </svg>
+                            <span class="channel-name">General Voice</span>
+                        </div>
+                        <!-- Voice users container will be dynamically added here -->
+                        <div class="voice-users-container" id="voice-general-users" style="display:none;">
+                            <div class="voice-user-entry">
+                                <svg class="voice-user-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                                <span class="voice-username">You</span>
+                            </div>
+                        </div>
+                        
+                        <div class="channel-item voice-channel" data-channel="voice-gaming">
+                            <svg class="channel-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                            </svg>
+                            <span class="channel-name">Gaming Voice</span>
+                        </div>
+                        <!-- Voice users container will be dynamically added here -->
+                        <div class="voice-users-container" id="voice-gaming-users" style="display:none;">
+                            <div class="voice-user-entry">
+                                <svg class="voice-user-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                                <span class="voice-username">You</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- User Profile Bar -->
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="User Avatar">
+                    <div class="status-indicator online"></div>
+                </div>
+                <div class="user-info">
+                    <div class="username">User123</div>
+                    <div class="user-status">Online</div>
+                </div>
+                <div class="user-actions">
+                    <button class="action-btn" title="Mute" id="muteBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                        </svg>
+                    </button>
+                    <button class="action-btn" title="Settings" id="settingsBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L5.09 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.58 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                        </svg>
+                    </button>
+                    <button class="action-btn" title="Logout" id="logoutBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-content">
+            <!-- Channel Header -->
+            <div class="channel-header">
+                <div class="channel-info">
+                    <svg class="channel-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                    </svg>
+                    <h3 class="channel-title">general</h3>
+                </div>
+                <div class="channel-toolbar">
+                    <button class="toolbar-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                    <button class="toolbar-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+                        </svg>
+                    </button>
+                    <button class="toolbar-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="messages-container" id="messagesContainer">
+                <div class="welcome-message">
+                    <div class="welcome-icon">#</div>
+                    <h2>Welcome to #general!</h2>
+                    <p>This is the start of the #general channel.</p>
+                </div>
+                
+                <!-- Messages will be dynamically added here -->
+            </div>
+
+            <!-- Message Input Area -->
+            <div class="message-input-container">
+                <div class="message-input-wrapper">
+                    <button class="attach-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                        </svg>
+                    </button>
+                    <input type="text" class="message-input" id="messageInput" placeholder="Message #general">
+                    <div class="input-actions">
+                        <button class="input-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </button>
+                        <button class="input-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path fill="#36393f" d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4zm7 0c0-1.66-1.34-3-3-3s-3 1.34-3 3 1.34 3 3 3 3-1.34 3-3z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settingsModal" style="display: none;">
+        <div class="settings-modal">
+            <div class="settings-header">
+                <div class="settings-title">User Settings</div>
+                <button class="close-settings" id="closeSettingsBtn">&times;</button>
+            </div>
+            <div class="settings-content">
+                <div class="settings-nav">
+                    <div class="settings-nav-item active" data-tab="my-account">My Account</div>
+                    <div class="settings-nav-item" data-tab="profile-customization">Profile Customization</div>
+                    <div class="settings-nav-item" data-tab="privacy-security">Privacy & Safety</div>
+                    <div class="settings-nav-item" data-tab="authorized-apps">Authorized Apps</div>
+                    <div class="settings-nav-item" data-tab="connections">Connections</div>
+                    <div class="settings-nav-item" data-tab="voice-video">Voice & Video</div>
+                    <div class="settings-nav-item" data-tab="text-image">Text & Images</div>
+                    <div class="settings-nav-item" data-tab="notifications">Notifications</div>
+                    <div class="settings-nav-item" data-tab="keybinds">Keybinds</div>
+                    <div class="settings-nav-item" data-tab="appearance">Appearance</div>
+                    <div class="settings-nav-item" data-tab="advanced">Advanced</div>
+                    <div class="settings-nav-item" data-tab="logout">Log Out</div>
+                </div>
+                <div class="settings-main">
+                    <!-- My Account Tab -->
+                    <div class="settings-tab active" id="my-account">
+                        <div class="settings-section">
+                            <h3>My Account</h3>
+                            <div class="form-group">
+                                <label for="username">USERNAME</label>
+                                <input type="text" id="username" class="settings-input" value="User123">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">EMAIL</label>
+                                <input type="email" id="email" class="settings-input" value="user@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">PASSWORD</label>
+                                <input type="password" id="password" class="settings-input" placeholder="••••••••">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">PHONE NUMBER</label>
+                                <input type="tel" id="phone" class="settings-input" placeholder="+1 (555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label for="backup-codes">BACKUP CODES</label>
+                                <div class="backup-codes">
+                                    <span class="backup-code">XXXX-XXXX</span>
+                                    <span class="backup-code">XXXX-XXXX</span>
+                                    <span class="backup-code">XXXX-XXXX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Customization Tab -->
+                    <div class="settings-tab" id="profile-customization">
+                        <div class="settings-section">
+                            <h3>Profile Customization</h3>
+                            <div class="avatar-section">
+                                <div class="avatar-preview">
+                                    <img id="profileAvatarPreview" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Profile Avatar">
+                                </div>
+                                <button class="upload-btn">Upload Avatar</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="bio">BIO</label>
+                                <textarea id="bio" class="settings-textarea" placeholder="Tell the world about yourself!">Just a Discord user</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Voice & Video Tab -->
+                    <div class="settings-tab" id="voice-video">
+                        <div class="settings-section">
+                            <h3>Voice & Video</h3>
+                            <div class="form-group">
+                                <label>INPUT DEVICE</label>
+                                <select class="settings-select">
+                                    <option>Default Microphone</option>
+                                    <option>USB Microphone</option>
+                                    <option>Headset Microphone</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>OUTPUT DEVICE</label>
+                                <select class="settings-select">
+                                    <option>Default Speakers</option>
+                                    <option>Headphones</option>
+                                    <option>USB Headset</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>INPUT VOLUME</label>
+                                <input type="range" class="slider" min="0" max="100" value="50">
+                            </div>
+                            <div class="form-group">
+                                <label>OUTPUT VOLUME</label>
+                                <input type="range" class="slider" min="0" max="100" value="75">
+                            </div>
+                            <div class="form-group">
+                                <label>CAMERA</label>
+                                <select class="settings-select">
+                                    <option>No camera</option>
+                                    <option>FaceTime HD Camera</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Tab -->
+                    <div class="settings-tab" id="appearance">
+                        <div class="settings-section">
+                            <h3>Appearance</h3>
+                            <div class="form-group">
+                                <label>THEME</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="theme" value="dark" checked>
+                                        <span class="radio-label">Dark Theme</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="theme" value="light">
+                                        <span class="radio-label">Light Theme</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>APPEARANCE MODE</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="appearance-mode" value="compact" checked>
+                                        <span class="radio-label">Compact Mode</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="appearance-mode" value="comfortable">
+                                        <span class="radio-label">Comfortable Mode</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="appearance-mode" value="large">
+                                        <span class="radio-label">Large Mode</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Tab -->
+                    <div class="settings-tab" id="notifications">
+                        <div class="settings-section">
+                            <h3>Notifications</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-label">All Messages</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-label">Direct Messages</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox">
+                                    <span class="checkbox-label">Friend Request Notifications</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-label">Server Invites</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Log Out Tab -->
+                    <div class="settings-tab" id="logout">
+                        <div class="settings-section">
+                            <h3>Log Out</h3>
+                            <div class="form-group">
+                                <p>Are you sure you want to log out?</p>
+                                <button class="danger-btn" id="confirmLogoutBtn">Log Out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/user-presence.js"></script>
+    <script src="js/webrtc.js"></script>
+    <script src="js/audio-effects.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
